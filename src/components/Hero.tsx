@@ -2,8 +2,8 @@ import React from 'react';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
+  const scrollToProjects = () => {
+    const aboutSection = document.getElementById('projects');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           </div>
 
           <button
-            onClick={scrollToAbout}
+            onClick={scrollToProjects}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
           >
             Explore My Work

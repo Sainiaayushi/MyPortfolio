@@ -22,7 +22,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-12 bg-gray-800/50">
+    <section  className="py-12 bg-gray-800/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
