@@ -7,27 +7,18 @@ const Skills: React.FC = () => {
     {
       title: 'Web Development',
       icon: <Globe className="text-teal-400" size={20} />,
-      skills: ['React', 'Node.js', 'HTML/CSS', 'Next.js', 'Express.js', 'Tailwind CSS']
+      skills: ['React', 'Node.js', 'HTML/CSS', 'Next.js', 'Express.js','WordPress', 'Tailwind CSS']
     },
     {
       title: 'Data Science & ML',
       icon: <Brain className="text-pink-400" size={20} />,
       skills: ['Machine Learning', 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', ]
     },
-    {
-      title: 'Databases',
-      icon: <Database className="text-yellow-400" size={20} />,
-      skills: [ 'PostgreSQL', 'MySQL', 'Firebase',]
-    },
-    {
-      title: 'Mobile Development',
-      icon: <Smartphone className="text-green-400" size={20} />,
-      skills: ['React Native', 'Flutter', 'Android']
-    },
+   
     {
       title: 'Tools & Technologies',
       icon: <Server className="text-blue-400" size={20} />,
-      skills: ['Git', 'Postman','Vs Code', 'Android Studio']
+      skills: ['Github', 'Postman','Vs Code', 'Android Studio']
     }
   ];
 
