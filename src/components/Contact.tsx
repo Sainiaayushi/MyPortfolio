@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react';
-
+import emailjs from 'emailjs-com';
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -19,10 +20,31 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Message sent successfully!');
+
+    emailjs
+      .send(
+        "service_305ilf1",     // Your EmailJS Service ID
+        "template_eu5w3a7",    // Your EmailJS Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          reply_to: formData.email
+        },
+        "f67oP7dzmYwfuHLJR"    // Your real EmailJS Public Key
+      )
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      })
+      .catch((error) => {
+        console.error("❌ Email send failed:", error);
+        alert("Something went wrong. Please try again.");
+      });
   };
+
 
   const contactInfo = [
     {
@@ -31,7 +53,7 @@ const Contact: React.FC = () => {
       value: 'sainiaayushi348@gmail.com',
       link: 'mailto:sainiaayushi348@gmail.com'
     },
-   
+
     {
       icon: <MapPin className="text-pink-400" size={20} />,
       title: 'Location',
@@ -114,7 +136,7 @@ const Contact: React.FC = () => {
           <div className="bg-gray-800/40 p-6 rounded-xl border border-gray-700">
             <h3 className="text-lg font-semibold text-white mb-4">Message Me</h3>
             <form onSubmit={handleSubmit} className="space-y-4 text-sm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
                 <input
                   type="text"
                   name="name"
@@ -124,6 +146,7 @@ const Contact: React.FC = () => {
                   placeholder="Name"
                   className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 focus:border-purple-500 focus:ring-purple-500/20 focus:outline-none"
                 />
+
                 <input
                   type="email"
                   name="email"
@@ -131,6 +154,15 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Email"
+                  className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 focus:border-purple-500 focus:ring-purple-500/20 focus:outline-none"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone || ""}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Contact Number"
                   className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 focus:border-purple-500 focus:ring-purple-500/20 focus:outline-none"
                 />
               </div>
@@ -164,10 +196,10 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-       <div className="text-center mt-10 text-xs text-gray-400 border-t border-gray-700 pt-4">
-        © 2025 Aayushi Saini. All rights reserved.
-  Designed & developed by Aayushi Saini .
-</div>
+        <div className="text-center mt-10 text-xs text-gray-400 border-t border-gray-700 pt-4">
+          © 2025 Aayushi Saini. All rights reserved.
+          Designed & developed by Aayushi Saini .
+        </div>
 
       </div>
     </section>
