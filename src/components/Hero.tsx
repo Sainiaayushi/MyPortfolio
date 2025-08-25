@@ -20,11 +20,11 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">
-            Full Stack Developer
+            Web Developer
           </h2>
           
           <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            I'm a passionate Full Stack Developer skilled in building responsive web applications using modern technologies like React, TypeScript Node.js, Express. I enjoy crafting seamless user experiences and writing clean, maintainable code to bridge the gap between frontend and backend development.
+            I'm a passionate Web Developer skilled in building responsive web applications using modern technologies like React, TypeScript Node.js, Express. I enjoy crafting seamless user experiences and writing clean, maintainable code to bridge the gap between frontend and backend development.
           </p>
 
           <div className="flex justify-center space-x-6 mb-12">

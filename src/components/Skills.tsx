@@ -7,12 +7,12 @@ const Skills: React.FC = () => {
     {
       title: 'Web Development',
       icon: <Globe className="text-teal-400" size={20} />,
-      skills: ['React', 'Node.js', 'HTML/CSS', 'Next.js', 'Express.js','WordPress', 'Tailwind CSS']
+      skills: ['React', 'Node.js', 'HTML/CSS', 'Next.js', 'Express.js','WordPress', 'Javascript','Tailwind CSS']
     },
     {
       title: 'Data Science & ML',
       icon: <Brain className="text-pink-400" size={20} />,
-      skills: ['Machine Learning', 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', ]
+      skills: ['Machine Learning', 'Pandas', 'NumPy', ]
     },
    
     {
